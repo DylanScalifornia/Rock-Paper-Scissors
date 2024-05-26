@@ -42,8 +42,18 @@ const playerSelection = 'rock'
 function game(){
     for(let i = 0; i <5; i++){
        const computerSelection = getComputerChoice();
-        console.log(playRound(playerSelection, computerSelection)) 
+        (playRound(playerSelection, computerSelection)) 
     }
+  
+   if (playerScore > compScore){
+    return 'The computer lost! You win the game!'
+   } else if (playerScore < compScore) {
+    return 'The computer won! Which means you lost!'
+   } else {
+    return 'You are tied with the computer'
+   }
 }
 
-game()
+
+
+console.log(game())
