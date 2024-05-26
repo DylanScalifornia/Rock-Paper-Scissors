@@ -5,6 +5,8 @@ const paperButton = document.querySelector('.paper')
 const scissorsButton = document.querySelector('.scissors')
 const outcomeDiv = document.querySelector('.outcome')
 const container = document.querySelector('.container')
+const playerScoreSpan = document.querySelector('.player-score')
+const computerScoreSpan = document.querySelector('.computer-score')
 
 function getComputerChoice(){
     const arrOfChoices = ['rock', 'paper', 'scissors']
@@ -74,10 +76,16 @@ const checkForWinner = (playerScore, computerScore) => {
     }
 }
 
+const updateScore = (playerScore, computerScore) => {
+    playerScoreSpan.innerText = `Player Score: ${playerScore}`
+    computerScoreSpan.innerText = `Computer Score: ${computerScore}`
+}
+ 
 rockButton.addEventListener('click', () => {
     const computerSelection = getComputerChoice()
     const playerSelection = 'rock'
     playRound(playerSelection, computerSelection)
+    updateScore(playerScore, compScore)
     checkForWinner(playerScore, compScore)
 })
 
