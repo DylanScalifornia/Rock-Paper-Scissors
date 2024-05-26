@@ -41,6 +41,7 @@ const playerSelection = 'rock'
 
 function game(){
     for(let i = 0; i <5; i++){
+       const playerSelection = prompt('Choose what to throw', 'rock') 
        const computerSelection = getComputerChoice();
         (playRound(playerSelection, computerSelection)) 
     }
