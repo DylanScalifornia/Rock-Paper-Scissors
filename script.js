@@ -62,21 +62,21 @@ function playRound (playerSelection, computerSelection){
 }
 
 rockButton.addEventListener('click', () => {
-    const computerSelection = computerPlay
+    const computerSelection = getComputerChoice()
     const playerSelection = 'rock'
-    playRound(playSelection, computerSelection)
+    playRound(playerSelection, computerSelection)
 })
 
 paperButton.addEventListener('click', () => {
-    const computerSelection = computerPlay
+    const computerSelection = getComputerChoice()
     const playerSelection = 'paper'
-    playRound(playSelection, computerSelection)
+    playRound(playerSelection, computerSelection)
 })
 
 scissorsButton.addEventListener('click', () => {
-    const computerSelection = computerPlay
+    const computerSelection = getComputerChoice()
     const playerSelection = 'scissors'
-    playRound(playSelection, computerSelection)
+    playRound(playerSelection, computerSelection)
 })
 
 // function game(){
