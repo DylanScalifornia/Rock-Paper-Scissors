@@ -4,7 +4,7 @@ const rockButton = document.querySelector('.rock')
 const paperButton = document.querySelector('.paper')
 const scissorsButton = document.querySelector('.scissors')
 const outcomeDiv = document.querySelector('.outcome')
-
+const container = document.querySelector('.container')
 
 function getComputerChoice(){
     const arrOfChoices = ['rock', 'paper', 'scissors']
@@ -14,7 +14,6 @@ function getComputerChoice(){
 }
 
 function playRound (playerSelection, computerSelection){
-    console.log
     if (playerSelection === 'rock' && computerSelection === 'rock'){
         const p = document.createElement('p')
         p.innerText = 'You tied! You both picked rock'
@@ -61,22 +60,39 @@ function playRound (playerSelection, computerSelection){
    
 }
 
+const checkForWinner = (playerScore, computerScore) => {
+    if (playerScore === 5){
+      const h2 = document.createElement('h2')
+      h2.classList.add('player-won')
+      h2.innerText = `You Won ${playerScore} to ${computerScore} great job beating the computer!`
+      outcomeDiv.append(h2)
+    } else if (computerScore === 5){
+        const h2 = document.createElement('h2')
+        h2.classList.add('computer-won')
+        h2.innerText = `You lost ${playerScore} to ${computerScore} great job beating the computer!`
+        outcomeDiv.append(h2)
+    }
+}
+
 rockButton.addEventListener('click', () => {
     const computerSelection = getComputerChoice()
     const playerSelection = 'rock'
     playRound(playerSelection, computerSelection)
+    checkForWinner(playerScore, compScore)
 })
 
 paperButton.addEventListener('click', () => {
     const computerSelection = getComputerChoice()
     const playerSelection = 'paper'
     playRound(playerSelection, computerSelection)
+    checkForWinner(playerScore, compScore)
 })
 
 scissorsButton.addEventListener('click', () => {
     const computerSelection = getComputerChoice()
     const playerSelection = 'scissors'
     playRound(playerSelection, computerSelection)
+    checkForWinner(playerScore, compScore)
 })
 
 // function game(){
